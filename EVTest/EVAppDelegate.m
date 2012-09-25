@@ -10,6 +10,7 @@
 #import "EvernoteSDK.h"
 
 @implementation EVAppDelegate
+@synthesize window = _window;
 
 - (void)dealloc
 {

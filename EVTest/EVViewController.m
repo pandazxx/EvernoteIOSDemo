@@ -25,13 +25,14 @@
     [[EvernoteSession sharedSession] authenticateWithViewController:self completionHandler:^(NSError *error) {
         if (error || !session.isAuthenticated) {
             UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Error" 
-                                                             message:@"Could not authenticate" 
+                                                             message:@"Could not authenticate"
                                                             delegate:nil 
                                                    cancelButtonTitle:@"OK" 
                                                    otherButtonTitles:nil] autorelease];
             [alert show];
         } else {
             NSLog(@"authenticated! noteStoreUrl:%@ webApiUrlPrefix:%@", session.noteStoreUrl, session.webApiUrlPrefix);
+            [self performSegueWithIdentifier:@"loginToNotebookList" sender:self];
         }
     }];
 }

@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		E41A0AB41611A34A00EE4C85 /* libevernote-sdk-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E41A0A8B16119B2500EE4C85 /* libevernote-sdk-ios.a */; };
 		E41A0AB61611A39700EE4C85 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E41A0AB51611A39700EE4C85 /* Security.framework */; };
+		E41A0AB91611AA6A00EE4C85 /* EVNotebookListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E41A0AB81611AA6900EE4C85 /* EVNotebookListViewController.m */; };
+		E41A0ABA1611AA6A00EE4C85 /* EVNotebookListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E41A0AB81611AA6900EE4C85 /* EVNotebookListViewController.m */; };
+		E41A0ACD1611B7BF00EE4C85 /* EVNotebookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E41A0ACC1611B7BF00EE4C85 /* EVNotebookDetailViewController.m */; };
+		E41A0AD01611B81C00EE4C85 /* EVNoteListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E41A0ACF1611B81C00EE4C85 /* EVNoteListViewController.m */; };
 		E44A0A971611983700DA3F0F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E44A0A961611983700DA3F0F /* UIKit.framework */; };
 		E44A0A991611983700DA3F0F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E44A0A981611983700DA3F0F /* Foundation.framework */; };
 		E44A0A9B1611983700DA3F0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E44A0A9A1611983700DA3F0F /* CoreGraphics.framework */; };
@@ -69,6 +73,12 @@
 /* Begin PBXFileReference section */
 		E41A0A6316119B2500EE4C85 /* evernote-sdk-ios.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "evernote-sdk-ios.xcodeproj"; sourceTree = "<group>"; };
 		E41A0AB51611A39700EE4C85 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		E41A0AB71611AA6900EE4C85 /* EVNotebookListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVNotebookListViewController.h; sourceTree = "<group>"; };
+		E41A0AB81611AA6900EE4C85 /* EVNotebookListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVNotebookListViewController.m; sourceTree = "<group>"; };
+		E41A0ACB1611B7BF00EE4C85 /* EVNotebookDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVNotebookDetailViewController.h; sourceTree = "<group>"; };
+		E41A0ACC1611B7BF00EE4C85 /* EVNotebookDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVNotebookDetailViewController.m; sourceTree = "<group>"; };
+		E41A0ACE1611B81C00EE4C85 /* EVNoteListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVNoteListViewController.h; sourceTree = "<group>"; };
+		E41A0ACF1611B81C00EE4C85 /* EVNoteListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVNoteListViewController.m; sourceTree = "<group>"; };
 		E44A0A921611983700DA3F0F /* EVTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EVTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E44A0A961611983700DA3F0F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E44A0A981611983700DA3F0F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -182,12 +192,18 @@
 			children = (
 				E41A0A1A16119B2500EE4C85 /* Dependence */,
 				E44A0AA51611983700DA3F0F /* EVAppDelegate.h */,
+				E41A0ACB1611B7BF00EE4C85 /* EVNotebookDetailViewController.h */,
+				E41A0ACC1611B7BF00EE4C85 /* EVNotebookDetailViewController.m */,
 				E44A0AA61611983700DA3F0F /* EVAppDelegate.m */,
 				E44A0AAE1611983700DA3F0F /* MainStoryboard_iPhone.storyboard */,
+				E41A0ACE1611B81C00EE4C85 /* EVNoteListViewController.h */,
+				E41A0ACF1611B81C00EE4C85 /* EVNoteListViewController.m */,
 				E44A0AB11611983700DA3F0F /* MainStoryboard_iPad.storyboard */,
 				E44A0AB41611983700DA3F0F /* EVViewController.h */,
 				E44A0AB51611983700DA3F0F /* EVViewController.m */,
 				E44A0A9D1611983700DA3F0F /* Supporting Files */,
+				E41A0AB71611AA6900EE4C85 /* EVNotebookListViewController.h */,
+				E41A0AB81611AA6900EE4C85 /* EVNotebookListViewController.m */,
 			);
 			path = EVTest;
 			sourceTree = "<group>";
@@ -371,6 +387,9 @@
 				E44A0AA31611983700DA3F0F /* main.m in Sources */,
 				E44A0AA71611983700DA3F0F /* EVAppDelegate.m in Sources */,
 				E44A0AB61611983700DA3F0F /* EVViewController.m in Sources */,
+				E41A0AB91611AA6A00EE4C85 /* EVNotebookListViewController.m in Sources */,
+				E41A0ACD1611B7BF00EE4C85 /* EVNotebookDetailViewController.m in Sources */,
+				E41A0AD01611B81C00EE4C85 /* EVNoteListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +398,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E44A0ACB1611983800DA3F0F /* EVTestTests.m in Sources */,
+				E41A0ABA1611AA6A00EE4C85 /* EVNotebookListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,6 +507,7 @@
 		E44A0ACF1611983800DA3F0F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_WARN_OBJC_MISSING_PROPERTY_SYNTHESIS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EVTest/EVTest-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
@@ -501,6 +522,7 @@
 		E44A0AD01611983800DA3F0F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_WARN_OBJC_MISSING_PROPERTY_SYNTHESIS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EVTest/EVTest-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
