@@ -7,17 +7,39 @@
 //
 
 #import "EVViewController.h"
+#import "EvernoteSDK.h"
 
 @interface EVViewController ()
 
 @end
 
 @implementation EVViewController
+- (IBAction)onLoginClicked:(id)sender
+{
+    [self login];
+}
+
+- (void)login
+{
+    EvernoteSession *session = [EvernoteSession sharedSession];
+    [[EvernoteSession sharedSession] authenticateWithViewController:self completionHandler:^(NSError *error) {
+        if (error || !session.isAuthenticated) {
+            UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Error" 
+                                                             message:@"Could not authenticate" 
+                                                            delegate:nil 
+                                                   cancelButtonTitle:@"OK" 
+                                                   otherButtonTitles:nil] autorelease];
+            [alert show];
+        } else {
+            NSLog(@"authenticated! noteStoreUrl:%@ webApiUrlPrefix:%@", session.noteStoreUrl, session.webApiUrlPrefix);
+        }
+    }];
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    [self login];
 }
 
 - (void)didReceiveMemoryWarning

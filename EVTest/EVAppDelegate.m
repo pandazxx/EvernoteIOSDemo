@@ -7,6 +7,7 @@
 //
 
 #import "EVAppDelegate.h"
+#import "EvernoteSDK.h"
 
 @implementation EVAppDelegate
 
@@ -18,7 +19,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    NSString *EVERNOTE_HOST = @"sandbox.evernote.com";
+    
+    // Fill in the consumer key and secret with the values that you received from Evernote
+    // To get an API key, visit http://dev.evernote.com/documentation/cloud/
+    NSString *CONSUMER_KEY = @"pandazxx";
+    NSString *CONSUMER_SECRET = @"e5d9fb8024756d3c";
+    
+    [EvernoteSession setSharedSessionHost:EVERNOTE_HOST
+                              consumerKey:CONSUMER_KEY 
+                           consumerSecret:CONSUMER_SECRET];
     return YES;
 }
 							
