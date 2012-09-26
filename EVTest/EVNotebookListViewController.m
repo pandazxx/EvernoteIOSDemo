@@ -7,6 +7,7 @@
 //
 
 #import "EVNotebookListViewController.h"
+#import "EVNoteListViewController.h"
 #import "EvernoteSDK.h"
 
 @interface EVNotebookListViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -42,6 +43,19 @@
                                 failure:^(NSError *error) {
                                     NSLog(@"error %@", error);                                            
                                 }];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"noteList"])
+    {
+        if ([segue.destinationViewController respondsToSelector:@selector(setNotebook:)])
+        {
+            NSIndexPath *indexPath = [self.nbTableView indexPathForCell:sender];
+
+            [segue.destinationViewController setNotebook:[self.notebooks objectAtIndex:indexPath.row]];
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning

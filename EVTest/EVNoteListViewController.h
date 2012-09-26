@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EvernoteSDK.h"
 
 @interface EVNoteListViewController : UIViewController
-@property (nonatomic, copy) NSArray *noteList;
+@property (nonatomic, retain) EDAMNotebook *notebook;
 @end
