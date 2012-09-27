@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EvernoteSDK.h"
 
 @interface EVNotebookDetailViewController : UIViewController
-
+@property (nonatomic, retain) EDAMNotebook *notebook;
 @end

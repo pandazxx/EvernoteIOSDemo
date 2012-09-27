@@ -12,6 +12,7 @@
 #import "EVPlainENMLParser.h"
 #import "EVTagParser.h"
 #import "NSData+MD5.h"
+#import "EVShowImageViewController.h"
 
 @interface EVNoteEditViewController ()
 @property (retain, nonatomic) IBOutlet UITextField *titleTextField;
@@ -100,6 +101,59 @@
     [super viewDidUnload];
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if (![segue.destinationViewController isKindOfClass:[EVShowImageViewController class]])
+    {
+        return;
+    }
+
+    if ([segue.identifier isEqualToString:@"showImage"])
+    {
+        UIImage *ret = nil;
+        for (EDAMResource *resource in self.note.resources)
+        {
+            if ([resource.mime isEqualToString:@"image/png"])
+            {
+                ret = [UIImage imageWithData:resource.data.body];
+            }
+        }
+
+        [segue.destinationViewController setImage:ret];
+    }
+    else if ([segue.identifier isEqualToString:@"showImageViaHTTP"])
+    {
+        UIImage *ret = nil;
+
+        for (EDAMResource *resource in self.note.resources)
+        {
+            if ([resource.mime isEqualToString:@"image/png"])
+            {
+                NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@res/%@", [[EvernoteSession sharedSession] webApiUrlPrefix], resource.guid]];
+                NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+
+                request.HTTPMethod = @"POST";
+                [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+
+                request.HTTPBody = [[[NSString stringWithFormat:@"auth=%@", [EvernoteSession sharedSession].authenticationToken] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding] dataUsingEncoding:NSUTF8StringEncoding];
+
+                NSURLResponse *response = nil;
+                NSError *error = nil;
+                NSData *responseBody = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+
+                if (error)
+                {
+                    NSLog(@"Cannot get image from http:%@", error);
+                }
+                ret = [UIImage imageWithData:responseBody];
+            }
+        }
+        
+        [segue.destinationViewController setImage:ret];
+    }
+}
+
+#pragma mark - Actions
 
 - (IBAction)onSaveButtonClicked:(id)sender
 {

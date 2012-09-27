@@ -9,6 +9,7 @@
 #import "EVNotebookListViewController.h"
 #import "EVNoteListViewController.h"
 #import "EvernoteSDK.h"
+#import "EVNotebookDetailViewController.h"
 
 @interface EVNotebookListViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (retain, nonatomic) IBOutlet UITableView *nbTableView;
@@ -54,6 +55,15 @@
             NSIndexPath *indexPath = [self.nbTableView indexPathForCell:sender];
 
             [segue.destinationViewController setNotebook:[self.notebooks objectAtIndex:indexPath.row]];
+        }
+    }
+    else if ([segue.identifier isEqualToString:@"notebookDetail"])
+    {
+        if ([segue.destinationViewController isKindOfClass:[EVNotebookDetailViewController class]])
+        {
+            NSIndexPath *indPath = [self.nbTableView indexPathForCell:sender];
+            EDAMNotebook *notebook = [self.notebooks objectAtIndex:indPath.row];
+            [segue.destinationViewController setNotebook:notebook];
         }
     }
 }

@@ -64,6 +64,7 @@
 		E48C3C491613EAC1007BCB73 /* EVTagParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E48C3C481613EAC1007BCB73 /* EVTagParser.m */; };
 		E4E93D98161421280010D4AD /* ucweb.png in Resources */ = {isa = PBXBuildFile; fileRef = E4E93D97161421280010D4AD /* ucweb.png */; };
 		E4E93D9D16142D150010D4AD /* NSData+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E93D9C16142D150010D4AD /* NSData+MD5.m */; };
+		E4E93DA516143D180010D4AD /* EVShowImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E93DA416143D180010D4AD /* EVShowImageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -180,6 +181,8 @@
 		E4E93D97161421280010D4AD /* ucweb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ucweb.png; path = ../../../../../Desktop/ucweb.png; sourceTree = "<group>"; };
 		E4E93D9B16142D150010D4AD /* NSData+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MD5.h"; sourceTree = "<group>"; };
 		E4E93D9C16142D150010D4AD /* NSData+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+MD5.m"; sourceTree = "<group>"; };
+		E4E93DA316143D180010D4AD /* EVShowImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVShowImageViewController.h; sourceTree = "<group>"; };
+		E4E93DA416143D180010D4AD /* EVShowImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVShowImageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,12 +276,14 @@
 				E41A0ACF1611B81C00EE4C85 /* EVNoteListViewController.m */,
 				E44A0AB11611983700DA3F0F /* MainStoryboard_iPad.storyboard */,
 				E44A0AB41611983700DA3F0F /* EVViewController.h */,
+				E44A0AB51611983700DA3F0F /* EVViewController.m */,
 				E48C3BD81612D6FE007BCB73 /* EVNoteEditViewController.h */,
 				E48C3BD91612D6FE007BCB73 /* EVNoteEditViewController.m */,
-				E44A0AB51611983700DA3F0F /* EVViewController.m */,
 				E44A0A9D1611983700DA3F0F /* Supporting Files */,
 				E41A0AB71611AA6900EE4C85 /* EVNotebookListViewController.h */,
 				E41A0AB81611AA6900EE4C85 /* EVNotebookListViewController.m */,
+				E4E93DA316143D180010D4AD /* EVShowImageViewController.h */,
+				E4E93DA416143D180010D4AD /* EVShowImageViewController.m */,
 			);
 			path = EVTest;
 			sourceTree = "<group>";
@@ -630,6 +635,7 @@
 				E48C3C461612FE3C007BCB73 /* EVPlainENMLParser.m in Sources */,
 				E48C3C491613EAC1007BCB73 /* EVTagParser.m in Sources */,
 				E4E93D9D16142D150010D4AD /* NSData+MD5.m in Sources */,
+				E4E93DA516143D180010D4AD /* EVShowImageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

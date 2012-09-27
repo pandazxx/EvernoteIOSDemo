@@ -37,6 +37,11 @@
     }];
 }
 
+
+- (IBAction)logout:(id)sender {
+    [[EvernoteSession sharedSession] logout];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
