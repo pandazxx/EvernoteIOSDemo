@@ -7,6 +7,8 @@
 //
 
 #import "EDAMNote+RawTextContent.h"
+#import "EVTagParser.h"
+#import "EvernoteSDK.h"
 
 @implementation EDAMNote (RawTextContent)
 - (void)setRawTextContent:(NSString *)content
@@ -16,6 +18,36 @@
             <en-note>%@</en-note>";
 
     self.content = [NSString stringWithFormat:template, content];
+}
+
+- (NSString *)stringPresentationFromTags
+{
+    if (self.tagNames)
+    {
+        return [EVTagParser stringFromTagNames:self.tagNames];
+    }
+    else
+    {
+        NSMutableArray *tagNames = [NSMutableArray arrayWithCapacity:self.tagGuids.count];
+        for (NSString *guid in self.tagGuids)
+        {
+            [[EvernoteNoteStore noteStore] getTagWithGuid:guid
+                                                  success:^(EDAMTag *tag) {
+                                                      [tagNames addObject:tag.name];
+                                                  }
+                                                  failure:^(NSError *e) {
+                                                      // FIXME:zxx 2012-9-27 should notify user
+                                                      NSLog(@"Cannot get tagname: %@", e);
+                                                  }];
+        }
+
+        return [EVTagParser stringFromTagNames:tagNames];
+    }
+}
+
+- (void)setTagsUsingStringPresentation:(NSString *)stringOfTags
+{
+    self.tagNames = [EVTagParser tagNamesFromString:stringOfTags];
 }
 
 @end

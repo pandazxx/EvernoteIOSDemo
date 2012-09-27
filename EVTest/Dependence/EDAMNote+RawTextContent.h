@@ -10,4 +10,7 @@
 
 @interface EDAMNote (RawTextContent)
 - (void)setRawTextContent:(NSString *)content;
+
+- (NSString *)stringPresentationFromTags;
+- (void)setTagsUsingStringPresentation:(NSString *)stringOfTags;
 @end

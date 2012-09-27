@@ -83,13 +83,13 @@ const NSInteger NOTE_BUFFER_SIZE = 10;
 
             if (sender == self.buttonNew)
             {
-                destVC.note = [[[EDAMNote alloc] init] autorelease];
+                [destVC setNoteGUID:nil];
             }
             else
             {
                 NSIndexPath *indexPath = [self.noteTableView indexPathForCell:sender];
 
-                destVC.note = [self getNoteWithIndex:indexPath.row];
+                [destVC setNoteGUID:[self getNoteWithIndex:indexPath.row].guid];
             }
         }
     }
@@ -99,6 +99,7 @@ const NSInteger NOTE_BUFFER_SIZE = 10;
 
 - (void)editViewController:(EVNoteEditViewController *)controller saveNote:(EDAMNote *)note
 {
+    NSLog(@"Saving note: %@", note);
     if ([note guidIsSet])
     {
         [[EvernoteNoteStore noteStore] updateNote:note success:^(EDAMNote *note) {

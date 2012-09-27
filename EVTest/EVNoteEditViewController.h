@@ -16,6 +16,8 @@
 @end
 
 @interface EVNoteEditViewController : UIViewController
-@property (nonatomic, retain) EDAMNote *note;
+@property (nonatomic, readonly, retain) EDAMNote *note;
 @property (nonatomic, assign) id <EVNoteEditViewControllerDelegate> delegate;
+
+- (void)setNoteGUID:(NSString *)guid;
 @end

@@ -61,6 +61,9 @@
 		E48C3C3F1612DEE4007BCB73 /* ENOAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E48C3C221612DEE4007BCB73 /* ENOAuthViewController.m */; };
 		E48C3C431612EAA1007BCB73 /* EDAMNote+RawTextContent.m in Sources */ = {isa = PBXBuildFile; fileRef = E48C3C421612EAA1007BCB73 /* EDAMNote+RawTextContent.m */; };
 		E48C3C461612FE3C007BCB73 /* EVPlainENMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E48C3C451612FE3C007BCB73 /* EVPlainENMLParser.m */; };
+		E48C3C491613EAC1007BCB73 /* EVTagParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E48C3C481613EAC1007BCB73 /* EVTagParser.m */; };
+		E4E93D98161421280010D4AD /* ucweb.png in Resources */ = {isa = PBXBuildFile; fileRef = E4E93D97161421280010D4AD /* ucweb.png */; };
+		E4E93D9D16142D150010D4AD /* NSData+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E93D9C16142D150010D4AD /* NSData+MD5.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -172,6 +175,11 @@
 		E48C3C421612EAA1007BCB73 /* EDAMNote+RawTextContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EDAMNote+RawTextContent.m"; sourceTree = "<group>"; };
 		E48C3C441612FE3C007BCB73 /* EVPlainENMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EVPlainENMLParser.h; path = EVTest/EVPlainENMLParser.h; sourceTree = SOURCE_ROOT; };
 		E48C3C451612FE3C007BCB73 /* EVPlainENMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EVPlainENMLParser.m; path = EVTest/EVPlainENMLParser.m; sourceTree = SOURCE_ROOT; };
+		E48C3C471613EAC1007BCB73 /* EVTagParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EVTagParser.h; path = EVTest/EVTagParser.h; sourceTree = SOURCE_ROOT; };
+		E48C3C481613EAC1007BCB73 /* EVTagParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EVTagParser.m; path = EVTest/EVTagParser.m; sourceTree = SOURCE_ROOT; };
+		E4E93D97161421280010D4AD /* ucweb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ucweb.png; path = ../../../../../Desktop/ucweb.png; sourceTree = "<group>"; };
+		E4E93D9B16142D150010D4AD /* NSData+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MD5.h"; sourceTree = "<group>"; };
+		E4E93D9C16142D150010D4AD /* NSData+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+MD5.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,8 +259,11 @@
 		E44A0A9C1611983700DA3F0F /* EVTest */ = {
 			isa = PBXGroup;
 			children = (
+				E4E93D9A1614212F0010D4AD /* Resources */,
 				E48C3C401612EA07007BCB73 /* Addons */,
 				E41A0A1A16119B2500EE4C85 /* Dependence */,
+				E48C3C471613EAC1007BCB73 /* EVTagParser.h */,
+				E48C3C481613EAC1007BCB73 /* EVTagParser.m */,
 				E44A0AA51611983700DA3F0F /* EVAppDelegate.h */,
 				E44A0AA61611983700DA3F0F /* EVAppDelegate.m */,
 				E41A0ACB1611B7BF00EE4C85 /* EVNotebookDetailViewController.h */,
@@ -451,9 +462,19 @@
 			children = (
 				E48C3C411612EAA1007BCB73 /* EDAMNote+RawTextContent.h */,
 				E48C3C421612EAA1007BCB73 /* EDAMNote+RawTextContent.m */,
+				E4E93D9B16142D150010D4AD /* NSData+MD5.h */,
+				E4E93D9C16142D150010D4AD /* NSData+MD5.m */,
 			);
 			name = Addons;
 			path = Dependence;
+			sourceTree = "<group>";
+		};
+		E4E93D9A1614212F0010D4AD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E4E93D97161421280010D4AD /* ucweb.png */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -538,6 +559,7 @@
 				E48C3C261612DEE4007BCB73 /* LICENSE in Resources */,
 				E48C3C281612DEE4007BCB73 /* LICENSE in Resources */,
 				E48C3C2A1612DEE4007BCB73 /* LICENSE in Resources */,
+				E4E93D98161421280010D4AD /* ucweb.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -606,6 +628,8 @@
 				E48C3C3F1612DEE4007BCB73 /* ENOAuthViewController.m in Sources */,
 				E48C3C431612EAA1007BCB73 /* EDAMNote+RawTextContent.m in Sources */,
 				E48C3C461612FE3C007BCB73 /* EVPlainENMLParser.m in Sources */,
+				E48C3C491613EAC1007BCB73 /* EVTagParser.m in Sources */,
+				E4E93D9D16142D150010D4AD /* NSData+MD5.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

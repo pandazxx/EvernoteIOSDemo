@@ -100,12 +100,24 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="lWU-IS-JfT">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="noteCell" id="jZ3-9g-uSo">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="noteCell" textLabel="1zv-Aq-EEo" detailTextLabel="q5d-Du-RiO" style="IBUITableViewCellStyleSubtitle" id="jZ3-9g-uSo">
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zv-Aq-EEo">
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5d-Du-RiO">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections>
@@ -176,27 +188,43 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T6S-GZ-eMx">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="384" id="g29-J2-HMl"/>
+                                    <constraint firstAttribute="height" constant="333" id="Nbf-zZ-3Xf"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2SR-6T-El1">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Add Default Icon">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onAddIconButtonClicked:" destination="eLc-0p-Idt" eventType="touchUpInside" id="HlZ-jW-kO5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="T6S-GZ-eMx" firstAttribute="leading" secondItem="TjH-MB-9Qo" secondAttribute="leading" type="default" id="1Iv-kG-hH6"/>
                             <constraint firstItem="TjH-MB-9Qo" firstAttribute="top" secondItem="yOE-x5-rgo" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="1mh-RC-eCC"/>
                             <constraint firstItem="Q1S-BO-XJ3" firstAttribute="leading" secondItem="zgI-lq-r44" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="7IK-LS-OTX"/>
+                            <constraint firstItem="2SR-6T-El1" firstAttribute="top" secondItem="T6S-GZ-eMx" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="8Yb-AX-pV0"/>
                             <constraint firstItem="B6W-SH-p4b" firstAttribute="leading" secondItem="zgI-lq-r44" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Fz4-qF-ILL"/>
                             <constraint firstAttribute="trailing" secondItem="T6S-GZ-eMx" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Gny-gY-fZe"/>
                             <constraint firstItem="TjH-MB-9Qo" firstAttribute="leading" secondItem="yOE-x5-rgo" secondAttribute="leading" type="default" id="MGN-Mf-ocJ"/>
+                            <constraint firstItem="2SR-6T-El1" firstAttribute="leading" secondItem="zgI-lq-r44" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Nv9-bU-lKq"/>
                             <constraint firstItem="yOE-x5-rgo" firstAttribute="top" secondItem="zgI-lq-r44" secondAttribute="top" constant="20" symbolic="YES" type="default" id="QbR-Hi-WiU"/>
+                            <constraint firstAttribute="bottom" secondItem="2SR-6T-El1" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="SKA-On-X34"/>
                             <constraint firstItem="T6S-GZ-eMx" firstAttribute="top" secondItem="Q1S-BO-XJ3" secondAttribute="top" type="default" id="WiD-0R-Zvh"/>
+                            <constraint firstAttribute="trailing" secondItem="2SR-6T-El1" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="a0N-Ml-c6H"/>
                             <constraint firstAttribute="trailing" secondItem="yOE-x5-rgo" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="lUB-Qe-qkf"/>
                             <constraint firstItem="Nve-Bq-64A" firstAttribute="leading" secondItem="zgI-lq-r44" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="mWJ-CB-b66"/>
                             <constraint firstItem="B6W-SH-p4b" firstAttribute="top" secondItem="zgI-lq-r44" secondAttribute="top" constant="24" id="mvI-Ks-TZc"/>
                             <constraint firstAttribute="trailing" secondItem="TjH-MB-9Qo" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="tm7-9W-8ex"/>
-                            <constraint firstAttribute="bottom" secondItem="T6S-GZ-eMx" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="vvX-gZ-75W"/>
                             <constraint firstItem="Nve-Bq-64A" firstAttribute="top" secondItem="zgI-lq-r44" secondAttribute="top" constant="62" id="zaC-3i-Oub"/>
                         </constraints>
                     </view>
@@ -261,38 +289,6 @@
             <point key="canvasLocation" x="-271" y="-507"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="EVNoteEditViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EVNoteEditViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="contentTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="tagsTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="titleTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="EVNoteListViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EVNoteListViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="buttonNew" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="noteTableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="EVNotebookDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EVNotebookDetailViewController.h"/>
-        </class>
-        <class className="EVNotebookListViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EVNotebookListViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="nbTableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="EVViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EVViewController.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
